@@ -30,7 +30,7 @@ Git (to clone the repository)
 
 Getting Started
 1. Clone the Repository
-git clone https://github.com/yourusername/DotnetProjectForge.git
+git clone https://github.com/ValdrinH/DotnetProjectForge)
 cd DotnetProjectForge
 
 2. Restore Dependencies
