@@ -23,7 +23,7 @@ Dependency Injection: Services are registered in Application and Infrastructure 
 Prerequisites
 Before running the project, ensure you have the following installed:
 
-.NET SDK 7.0 (or later)
+.NET SDK 9.0 (or later)
 Visual Studio 2022 (or another IDE like Visual Studio Code)
 SQL Server (optional, if you replace the in-memory database with a real database)
 Git (to clone the repository)
