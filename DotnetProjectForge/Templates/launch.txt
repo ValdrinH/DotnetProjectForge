@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch {{ProjectName}}",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/{{ProjectName}}.API/bin/Debug/{{DotnetVersion}}/{{ProjectName}}.API.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/{{ProjectName}}.API",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)",
+        "uriFormat": "%s"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/{{ProjectName}}.API/Views"
+      },
+      "stopAtEntry": false
+    }
+  ]
+}

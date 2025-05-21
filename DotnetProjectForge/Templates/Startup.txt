@@ -1,0 +1,36 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+{{Namespace}}.Data; // For EFCore
+
+namespace {{Namespace}}
+{
+    public class Startup
+    {
+        public IConfiguration Configuration { get; }
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+            {{AuthenticationServices}}
+            {{DatabaseServices}}
+        }
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseRouting();
+            {{Middleware}}
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
+        }
+    }
+}

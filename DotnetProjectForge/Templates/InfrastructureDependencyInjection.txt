@@ -1,0 +1,20 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using {{Namespace}}.Domain.Entities;
+using {{Namespace}}.Infrastructure.Data;
+using {{Namespace}}.Infrastructure.Repositories;
+
+namespace {{Namespace}}.Infrastructure
+{
+    public static class DependencyInjection
+    {
+        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+        {
+            {{DatabaseServices}}
+            
+            services.AddScoped<IRepository, GenericRepository>();
+            
+            return services;
+        }
+    }
+}

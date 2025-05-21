@@ -1,0 +1,21 @@
+using System.Reflection;
+using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
+using {{Namespace}}.Application.Interfaces;
+using {{Namespace}}.Application.Services;
+using {{Namespace}}.Application.Validations;
+
+namespace {{Namespace}}.Application
+{
+    public static class DependencyInjection
+    {
+        public static IServiceCollection AddApplication(this IServiceCollection services)
+        {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddScoped<ISampleService, SampleService>();
+            
+            return services;
+        }
+    }
+}

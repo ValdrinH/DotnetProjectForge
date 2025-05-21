@@ -1,0 +1,8 @@
+namespace {{Namespace}}.Application.Interfaces 
+{ 
+	public interface ISampleService 
+	{ 
+		Task GetSampleAsync(int id); 
+		Task CreateSampleAsync(SampleDto sampleDto); 
+	} 
+}

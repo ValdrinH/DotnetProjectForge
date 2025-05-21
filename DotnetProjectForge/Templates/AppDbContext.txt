@@ -1,0 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using {{Namespace}}.Domain.Entities;
+
+namespace {{Namespace}}.Infrastructure.Persistence
+{
+    public class AppDbContext : DbContext
+    {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
+
+        public DbSet<SampleEntity> Samples { get; set; }
+    }
+}

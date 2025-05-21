@@ -1,0 +1,9 @@
+using {{Namespace}}.Domain.Common;
+
+namespace {{Namespace}}.Domain.Entities
+{
+    public class SampleEntity : BaseEntity
+    {
+        public string Name { get; set; }
+    }
+}

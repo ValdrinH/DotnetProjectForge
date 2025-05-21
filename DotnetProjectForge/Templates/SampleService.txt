@@ -1,0 +1,36 @@
+using {{Namespace}}.Application.Interfaces;
+using {{Namespace}}.Application.Dtos;
+using {{Namespace}}.Domain.Entities;
+using {{Namespace}}.Infrastructure.Repositories;
+
+namespace {{Namespace}}.Application.Services
+{
+    public class SampleService : ISampleService
+    {
+        private readonly IRepository<SampleEntity> _sampleRepository;
+
+        public SampleService(IRepository<SampleEntity> sampleRepository)
+        {
+            _sampleRepository = sampleRepository;
+        }
+
+        public async Task<SampleDto> GetSampleAsync(int id)
+        {
+            var entity = await _sampleRepository.GetByIdAsync(id);
+            return new SampleDto
+            {
+                Id = entity.Id,
+                Name = entity.Name
+            };
+        }
+
+        public async Task CreateSampleAsync(SampleDto sampleDto)
+        {
+            var entity = new SampleEntity
+            {
+                Name = sampleDto.Name
+            };
+            await _sampleRepository.AddAsync(entity);
+        }
+    }
+}

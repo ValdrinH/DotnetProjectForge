@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>{{DotnetVersion}}</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+	<ItemGroup>
+		{{Packages}}
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Domain\{{ProjectName}}.Domain.csproj" />
+	</ItemGroup>
+</Project>

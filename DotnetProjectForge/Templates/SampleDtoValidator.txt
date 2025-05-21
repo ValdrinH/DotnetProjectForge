@@ -1,0 +1,17 @@
+using FluentValidation;
+using {{Namespace}}.Application.Dtos;
+
+namespace {{Namespace}}.Application.Validations 
+{
+    public class SampleDtoValidator : AbstractValidator<SampleDto>
+    {
+        public SampleDtoValidator()
+        {
+            RuleFor(x => x.Name)
+                .NotEmpty()
+                .WithMessage("Name is required.")
+                .MaximumLength(100)
+                .WithMessage("Name cannot exceed 100 characters.");
+        }
+    }
+}

@@ -1,0 +1,12 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace {{Namespace}}.Presentation.Controllers
+{
+    [ApiController]
+    [Route(\"api/[controller]\")]
+    public class SampleController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Get() => Ok(\"Hello from {{Namespace}} API\");
+    }
+}
